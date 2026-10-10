@@ -1,0 +1,10 @@
+---
+description: AI agent runtime backup and secrets exclusion rules
+globs: ["**/.hermes/**", "**/*backup*", "**/scripts/**"]
+---
+
+# Agent State Backup Rules
+
+- Never commit files matching `*.env`, `secrets/*`, `*.pem`, or `state.db*`.
+- Ensure all backup automation scripts verify Git status before pushing.
+- Exclude cache, scratch, and binary audio folders from backup mirrors.

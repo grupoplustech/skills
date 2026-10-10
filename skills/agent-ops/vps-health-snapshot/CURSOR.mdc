@@ -1,0 +1,10 @@
+---
+description: Linux server diagnostic and health inspection rules
+globs: ["**/ops/**", "**/*.sh", "**/deploy/**"]
+---
+
+# VPS Health Inspection Rules
+
+- Always prioritize read-only diagnostics (`uptime`, `ss`, `df -h`, `docker ps`).
+- Never run intrusive service restarts without confirming root causes.
+- Report resource metrics clearly before suggesting optimization steps.

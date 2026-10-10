@@ -1,0 +1,10 @@
+---
+description: Playwright screenshot capture for Next.js authenticated routes
+globs: ["**/tests/**", "**/e2e/**", "**/*playwright*"]
+---
+
+# Next.js Protected Screenshot Rules
+
+- Always inject authentication cookies before calling `page.goto()`.
+- Use high DPI scaling (`device_scale_factor=2`) for legible multimodal inspection.
+- Wait for client component hydration to prevent capturing skeleton loaders.

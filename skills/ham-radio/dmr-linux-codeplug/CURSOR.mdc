@@ -1,0 +1,12 @@
+---
+description: Amateur Radio DMR codeplug management and Linux hardware interface rules
+globs: ["**/*.yaml", "**/*.csv", "**/*.rules", "**/radio/**"]
+---
+
+# DMR Codeplug & Linux Hardware Rules
+
+- Always validate DMR channel definitions in `qdmrcodeplug.yaml`:
+  - Every digital channel MUST define `radioId`, `rxFrequency`, `txFrequency`, `colorCode`, `timeSlot`, and `groupList`.
+  - Never allow empty `radioId: ""` (causes yaml-cpp exception in qdMR).
+- USB cable access requires user in `dialout` group and udev rules under `/etc/udev/rules.d/`.
+- For Python codeplug automation, strictly use `ruamel.yaml` with `round_trip_dump` to prevent dropping comments and reordering keys.

@@ -1,0 +1,10 @@
+---
+description: Multi-agent delegation and subagent orchestration patterns
+globs: ["**/subagents/**", "**/agents/**", "**/*delegate*"]
+---
+
+# Subagent Orchestration Rules
+
+- Subagents must not perform destructive commands without parent supervisor oversight.
+- Every delegated task must have a measurable, verifiable completion condition.
+- Maintain independent memory and profile stores for domain-specific agent roles.

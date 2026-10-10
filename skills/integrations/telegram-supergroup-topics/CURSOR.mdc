@@ -1,0 +1,10 @@
+---
+description: Telegram Bot API and forum topics routing rules
+globs: ["**/telegram/**", "**/*bot*", "**/*notify*"]
+---
+
+# Telegram Topics Rules
+
+- Never hardcode bot tokens; read from environment variables.
+- Forum topics routing requires explicit `message_thread_id` parameter.
+- Test endpoints with `getUpdates` before configuring webhook callbacks.

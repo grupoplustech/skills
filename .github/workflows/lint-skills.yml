@@ -1,0 +1,26 @@
+name: Lint Skills Repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Skill Structure
+        run: |
+          echo "Checking skills directory..."
+          for skill in $(find skills -mindepth 2 -maxdepth 2 -type d); do
+            echo "Checking $skill..."
+            test -f "$skill/README.md" || (echo "Missing README.md in $skill" && exit 1)
+            test -f "$skill/SKILL.md" || (echo "Missing SKILL.md in $skill" && exit 1)
+            test -f "$skill/CLAUDE.md" || (echo "Missing CLAUDE.md in $skill" && exit 1)
+            test -f "$skill/CURSOR.mdc" || (echo "Missing CURSOR.mdc in $skill" && exit 1)
+            test -f "$skill/GEMINI.md" || (echo "Missing GEMINI.md in $skill" && exit 1)
+            test -f "$skill/GPT.md" || (echo "Missing GPT.md in $skill" && exit 1)
+          done
+          echo "All skills validated successfully!"

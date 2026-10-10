@@ -1,0 +1,10 @@
+---
+description: Composio SDK and MCP tool routing rules
+globs: ["**/composio/**", "**/tools/**", "**/*mcp*"]
+---
+
+# Composio SDK Rules
+
+- Verify active project ID before querying connected app status.
+- Implement exponential backoff for 502/504 errors on downstream tool calls.
+- Never re-prompt users for OAuth credentials without checking local CLI scope.

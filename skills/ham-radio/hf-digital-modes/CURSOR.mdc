@@ -1,0 +1,10 @@
+---
+description: Ham radio digital modes and serial CAT control rules
+globs: ["**/radio/**", "**/*.cat", "**/*wsjtx*"]
+---
+
+# HF Digital Modes Rules
+
+- CAT control troubleshooting must check serial device permissions (`/dev/ttyUSB*` in `dialout` group).
+- CI-V frame validation requires preambles `0xFE 0xFE` and termination `0xFD`.
+- Audio calibration instructions must enforce zero ALC deflection to prevent intermodulation distortion (IMD).

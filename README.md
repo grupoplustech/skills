@@ -61,6 +61,22 @@ skills/
 
 ---
 
+
+---
+
+## 🛡️ Filosofía de Diseño: Anti-Bloat y Carga Responsable
+*(Inspirado en el análisis de Fazt Code y Dax de OpenCode sobre la saturación de contexto)*
+
+Muchos repositorios populares de skills cometen el error de empujar **mega-packs de 50+ archivos Markdown**. Esto degrada el rendimiento de los modelos modernos por tres razones críticas:
+1. **Contaminación de Contexto (Trigger Polución):** Cada skill registrado gasta tokens en el arranque solo con su descripción. Si la descripción es ambigua, el agente lo auto-invoca sin necesidad, llenando la ventana de contexto de texto estático.
+2. **Restricciones que Limitan la Inteligencia del Modelo:** Forzar reglas rígidas pensadas para modelos antiguos ahoga la capacidad de modelos avanzados (Claude 3.7, Gemini 2.5, GPT-4.5) que ya resuelven el problema de forma nativa ("vainilla").
+3. **Falsas Métricas de Estrellas:** Decenas de miles de estrellas en GitHub no garantizan utilidad en tu terminal diario.
+
+### 🎯 Principios de este Repositorio:
+* **Instalación Granular, No Bundles Ciegos:** Instala únicamente el skill que resuelve tu problema actual en tu proyecto.
+* **Ingeniería y Protocolos, No Prose Prompting:** Nuestros skills no dicen *"sé un programador experto"*; entregan comandos reproducibles, endpoints de NOAA, fórmulas de WCAG, udev rules y protocolos de hardware.
+* **Descripciones con Triggers Precisos:** Cada skill define exactamente cuándo activarse y cuándo mantenerse en reposo.
+
 ## 🚀 Quickstart & Installation
 
 See [**INSTALL.md**](INSTALL.md) for full instructions tailored to each platform.

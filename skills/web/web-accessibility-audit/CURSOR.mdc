@@ -1,0 +1,10 @@
+---
+description: Web accessibility (WCAG AA) and semantic HTML rules
+globs: ["**/*.tsx", "**/*.jsx", "**/*.html", "**/*.css", "**/*.scss"]
+---
+
+# Accessibility (a11y) Rules
+
+- Interactive elements must be semantic (`<button>`, `<a>`) or have `role="button"` + `tabIndex={0}` + keyboard handlers.
+- Never use `outline: none` in CSS without `:focus-visible` styling.
+- All `<img>` tags must include an informative `alt` attribute or `alt=""` for purely decorative images.

@@ -1,0 +1,10 @@
+---
+description: Next.js Server Actions security and validation rules
+globs: ["**/actions/**", "**/*action*.ts", "**/*actions*.ts"]
+---
+
+# Server Action Security Rules
+
+- Never trust client input: validate all arguments using Zod `safeParse()`.
+- Always verify server session identity before reading/writing database records.
+- Disallow mutations where payload IDs differ from `session.user.id` (IDOR defense).

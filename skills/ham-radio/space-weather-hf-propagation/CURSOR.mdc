@@ -1,0 +1,10 @@
+---
+description: Amateur radio space weather and ionospheric propagation rules
+globs: ["**/radio/**", "**/weather/**", "**/*propagation*"]
+---
+
+# Space Weather HF Propagation Rules
+
+- Use NOAA Space Weather Prediction Center (SWPC) public JSON endpoints.
+- Parse Kp index from `noaa-planetary-k-index.json` (latest entry).
+- Translate geomagnetic storm levels (G1-G5) to expected HF absorption.

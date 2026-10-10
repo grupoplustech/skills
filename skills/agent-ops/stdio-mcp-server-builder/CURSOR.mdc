@@ -1,0 +1,10 @@
+---
+description: Model Context Protocol (MCP) stdio server development rules
+globs: ["**/*mcp*", "**/server.js", "**/server.py"]
+---
+
+# Stdio MCP Server Rules
+
+- Never use `console.log()` or bare `print()` in stdio MCP servers: use `stderr`.
+- Validate tool parameters against declared JSON schemas before execution.
+- Maintain JSON-RPC 2.0 specification compliance.
